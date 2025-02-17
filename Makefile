@@ -4,7 +4,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-# Sources
 SRCS = sources/main.c \
        sources/builtins.c \
        sources/prepare_cmds.c \
@@ -50,18 +49,14 @@ SRCS = sources/main.c \
        sources/pipex/request_limiters.c \
        sources/pipex/utils.c
 
-# Objects
 OBJS = $(SRCS:.c=.o)
 
-# Headers
 INCLUDES = -I includes
 
-# Libft
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 LIBS = -L$(LIBFT_PATH) -lft -lreadline
 
-# Rules
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
